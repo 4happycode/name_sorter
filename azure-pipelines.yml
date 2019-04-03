@@ -32,11 +32,10 @@ jobs:
   # - script: python -m pip install --upgrade pip && pip install -r requirements.txt
   #   displayName: 'Install dependencies'
   - script: python name_sorter.py
-  # - script: |
-  #     # pip install pytest
-  #     Python name_sorter.py
-  #     # pytest tests --doctest-modules --junitxml=junit/test-results.xml
-  #   displayName: 'pytest'
+  - script: |
+      pip install pytest
+      pytest tests --doctest-modules --junitxml=junit/test-results.xml
+    displayName: 'pytest'
 
   - task: PublishTestResults@2
     inputs:
@@ -55,5 +54,5 @@ jobs:
       versionSpec: '3.x'
       architecture: 'x64'
 
-  - script: python setup.py sdist
+  - script: python name_sorter.py sdist
     displayName: 'Build sdist'
