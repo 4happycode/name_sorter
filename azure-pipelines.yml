@@ -33,11 +33,11 @@ jobs:
   #   displayName: 'Install dependencies'
 
   - script: python name_sorter.py
-  - script: |
-      pip install pytest
-      pip install pytest-cov
-      pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
-    displayName: 'pytest'
+  # - script: |
+  #     pip install pytest
+  #     pip install pytest-cov
+  #     pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+  #   displayName: 'pytest'
   
   - task: PublishTestResults@2
     inputs:
